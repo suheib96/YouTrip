@@ -1,0 +1,19 @@
+h1 {
+    font-size: 18pt;
+}
+
+.margin-bot {
+    margin-bottom: 30px;
+}
+
+.margin-top {
+    margin-top: 10px;
+}
+
+.margin-left {
+    margin-left: 50px;
+}
+
+.width {
+    width: 700px;
+}

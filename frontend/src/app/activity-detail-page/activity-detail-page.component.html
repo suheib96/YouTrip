@@ -1,0 +1,103 @@
+<app-navBar></app-navBar>
+
+<div class="row justify-content-center">
+
+  <div class="col-3">
+  </div>
+
+  <div class="col-7" *ngIf="activity">
+
+    <h1>{{activity.name}}</h1>
+
+    <p><b>{{activity.activityCategory | titlecase}}</b></p>
+    <p>{{activity.description}}</p>
+
+    <table>
+      <tr>
+        <td>
+          Adresse:
+        </td>
+
+        <td>
+          {{activity.street}} {{activity.houseNumber}}
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+
+        </td>
+
+        <td>
+          {{activity.zipCode}} {{activity.city.name}}
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+          Website:
+        </td>
+
+        <td>
+          {{activity.contactDetails?.website}}
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+          E-Mail Adresse:
+        </td>
+
+        <td>
+          {{activity.contactDetails?.emailAddress}}
+        </td>
+
+      </tr>
+
+      <tr>
+        <td>
+          Telefonnummer:
+        </td>
+        <td>
+          {{activity.contactDetails?.phoneNumber}}
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+          Gesamtbewertung:
+        </td>
+
+        <td *ngIf="activity.averageRatingScore===0; else elseBlock"> Es gibt noch keine Bewertungen
+
+        </td>
+
+        <ng-template #elseBlock>{{activity.averageRatingScore}}</ng-template>
+
+      </tr>
+    </table>
+
+    <div *ngIf="showAdminFunction">
+      <button (click)="showEditField()">{{buttonText}}</button>
+      <button (click)="handleDeleteActivity(activityId)">Löschen</button>
+    </div>
+
+    <div *ngIf="showEdit">
+      <app-activity-form [activityIn]="activity" (activityOut)="handleFormSubmit($event)"></app-activity-form>
+    </div>
+
+    <div>
+      <app-rating-list [parentData]="showAdminFunction"></app-rating-list>
+
+      <app-add-rating></app-add-rating>
+
+      <button class="margin-top" (click)="handleBackButton()">Zurück</button>
+
+    </div>
+  </div>
+  <div class="col-2">
+    <div class="admin-margin">
+      <button (click)="showAdmin()">Admin-Mode</button>
+    </div>
+  </div>
+</div>

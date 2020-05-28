@@ -1,0 +1,104 @@
+<form [formGroup]="form" (ngSubmit)="handleSubmit()">
+
+    <table class= "text-format">
+      <tr>
+
+        <td>
+          <p>Bezeichnung*</p>
+        </td>
+
+        <td>
+          <input formControlName="name" type="text" placeholder="Bezeichnung"/>
+        </td>
+      </tr>
+  
+      <tr>
+        <td>
+          <p>Kategorie*</p>
+        </td>
+
+        <td>
+          <select formControlName="activityCategory">
+            <option value='' disabled selected> Kategorie auswählen</option>
+            <option value='RESTAURANT'> Restaurant</option>
+            <option value='HOTEL'> Hotel</option>
+            <option value='MUSEUM'> Museum</option>
+            <option value='OTHER'> Sonstiges</option>
+          </select>
+        </td>
+      </tr>
+  
+      <tr>
+        <td>
+          <p>Stadt*</p>
+        </td>
+
+        <td>
+          <select formControlName="city">
+            <option value='' disabled selected> Stadt auswählen</option>
+            <option *ngFor="let city of cities" [ngValue]="city.id">{{city.name}}</option>
+          </select>
+        </td>
+
+        <td>
+          <input formControlName="zipCode" type="number" placeholder="PLZ" />
+        </td>
+      </tr>
+  
+      <tr>
+        <td>
+          <p>Straße*</p>
+        </td>
+
+        <td>
+          <input formControlName="street" type="text" placeholder="Straße"/>
+        </td>
+
+        <td>
+          <input formControlName="houseNumber" type="text" placeholder="Hausnummer" />
+        </td>
+      </tr>
+  
+      <tr>
+        <td>
+          <p>Beschreibung</p>
+        </td>
+
+        <td>
+          <input formControlName="description" type="text" placeholder="Beschreibung" class="testfield" />
+        </td>
+      </tr>
+  
+      <tr>
+        <td>
+          <p>Kontakt</p>
+        </td>
+
+        <td>
+          <input formControlName="website" type="text" placeholder="Webseite" />
+        </td>
+
+        <td>
+          <input formControlName="emailAddress" type="text" placeholder="E-Mail" />
+        </td>
+        
+        <td>
+          <input formControlName="phoneNumber" type="text" placeholder="Telefonnummer"/>
+        </td>
+      </tr>
+      
+      <tr>
+        <td>
+          <button type="submit">Speichern</button>
+        </td>
+      </tr>
+    </table>
+  
+    <div *ngIf="wasFailure || ((form.controls.name.invalid && (form.controls.name.touched || form.controls.name.dirty)) 
+    ||  (form.controls.activityCategory.invalid && (form.controls.activityCategory.touched || form.controls.activityCategory.dirty)) 
+    ||  (form.controls.street.invalid && (form.controls.street. touched || form.controls.street.dirty)) 
+    ||  (form.controls.houseNumber.invalid && (form.controls.houseNumber.touched || form.controls.houseNumber.dirty)) 
+    ||  (form.controls.city.invalid  && (form.controls.city.touched || form.controls.city.dirty)) 
+    ||  (form.controls.zipCode.invalid && (form.controls.zipCode.touched || form.controls.zipCode.dirty))
+    )">Bitte fülle alle mit * gekennzeichneten Felder aus</div>
+  </form>

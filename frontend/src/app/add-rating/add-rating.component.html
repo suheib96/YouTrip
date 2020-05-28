@@ -1,0 +1,21 @@
+<button (click)="showAddInputFields()">{{addRatingButton}}</button>
+
+<div *ngIf="showAdd">
+    <form [formGroup]="form" (ngSubmit)="createNewRating()">
+
+        <input formControlName="score" type="number" placeholder="Bewertung" />
+
+        <div *ngIf="form.controls.score.invalid && (form.controls.score.touched || form.controls.score.dirty)">
+            Bewertung nur zwischen 1 und 5 möglich!
+        </div>
+
+        <input formControlName="comment" type="text" placeholder="Kommentar" />
+
+        <div *ngIf="form.controls.comment.invalid && (form.controls.comment.touched || form.controls.comment.dirty)">
+            Bitte alle Felder ausfüllen
+        </div>
+
+        <button type="submit">Speichern</button>
+    </form>
+</div>
+

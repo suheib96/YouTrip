@@ -1,0 +1,19 @@
+.navbar {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap-reverse; 
+    align-items: stretch;
+    justify-content: space-around;
+}
+
+.navSpacing {
+    margin-right: auto;
+    margin-left: auto;
+    text-align: center;
+}
+
+.font-brand {
+    font-size: 38px;
+    margin-top: 8px;
+}
+

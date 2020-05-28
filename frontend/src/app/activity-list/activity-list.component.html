@@ -1,0 +1,39 @@
+<div class="margin-bot margin-top">
+    <h1>Folgende Aktivitäten gibt es: </h1>
+</div>
+
+<table>
+
+    <tr>
+
+        <td>
+            <div class="margin-bot margin-top margin-left">
+                <button (click)="sortByAsc('name')">Alphabetisch sortieren (A-Z)</button>
+                <button (click)="sortByDesc('name')">Alphabetisch sortieren (Z-A)</button>
+                <button (click)="sortByRatingAsc('averageRatingScore')">Nach Bewertung ( Absteigend )</button>
+                <button (click)="sortByRatingDesc('averageRatingScore')">Nach Bewertung ( Aufsteigend )</button>
+            </div>
+        </td>
+    </tr>
+
+    <tr>
+        <td>
+            <div>
+                <ul *ngIf="inputActivities" style="list-style: none;">
+                    <li *ngFor="let activity of inputActivities">
+                        <app-one-activity-in-list [inputOneActivity]="activity">
+                        </app-one-activity-in-list>
+                    </li>
+                </ul>
+            </div>
+        </td>
+    </tr>
+
+    <tr>
+        <td>
+            <div class="margin-bot">
+                <button routerLink='/activities/add'>Aktivität hinzufügen</button>
+            </div>
+        </td>
+    </tr>  
+</table>

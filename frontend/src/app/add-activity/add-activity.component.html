@@ -1,0 +1,14 @@
+<app-navBar></app-navBar>
+
+<div class="row justify-content-center">
+
+    <div class="col-3">
+    </div>
+    <div class="col-9">
+        <h1>Aktivität hinzufügen</h1>
+
+        <app-activity-form (activityOut)="handleFormSubmit($event)"></app-activity-form>
+
+        <button (click)="handleCancel()">Abbrechen</button>
+    </div>
+</div>

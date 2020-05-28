@@ -1,0 +1,24 @@
+<div class="field">
+    <table>
+        <tr>
+            <td class="width">
+                <a routerLink="/activities/details/{{inputOneActivity.id}}"> {{inputOneActivity.name}}</a><br />
+            </td>
+
+            <td>
+                <p>Bewertung: {{inputOneActivity.averageRatingScore}}</p>
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                <p>Kategorie: {{inputOneActivity.activityCategory | titlecase}}</p>
+            </td>
+
+            <td>
+                <p class="margin-top">{{inputOneActivity.street}} {{inputOneActivity.houseNumber}}</p>
+                <p>{{inputOneActivity.city.name}}</p>
+            </td>
+        </tr>     
+    </table>
+</div>

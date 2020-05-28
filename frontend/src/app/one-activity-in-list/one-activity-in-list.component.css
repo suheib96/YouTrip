@@ -1,0 +1,25 @@
+.field {
+    border: solid black;
+    border-radius: 10px;
+    padding: 7px;
+    height: auto;
+    margin-bottom: 25px;
+    color:black;
+    width: 700px
+}
+
+.width {
+    width: 450px;
+}
+
+.margin-top {
+    margin-top: 40px;
+}
+
+a {
+    font-size: 22pt;
+}
+
+p {
+    font-size: 14pt;
+}

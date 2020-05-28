@@ -1,0 +1,11 @@
+.boarder {
+    border: solid black 1px;
+}
+
+.boarder-top {
+    border-top: solid black 1px;
+}
+
+.boarder-bot {
+    border-bottom: solid black 1px;
+}

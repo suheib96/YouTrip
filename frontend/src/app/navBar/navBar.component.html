@@ -1,0 +1,52 @@
+<nav class="navbar navbar-expand-lg navbar-light" style="background-color:powderblue;">
+
+    <a class="navbar-brand " routerLink="/start"><img src="./assets/Youtrip_Logo.png" width="100px" /></a>
+
+    <button class="navbar-toggler " type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon "></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto navSpacing">
+
+            <li class="nav-item active navSpacing" >
+                <a class="nav-link" [routerLink]="['/activities']" [queryParams]="{ category: 'restaurant'}"><img
+                        src="./assets/restaurant (1).png" width="15px"><br>Alle Restaurants
+                    <span class="sr-only">(current)</span>
+                </a>
+            </li>
+
+            <li class="nav-item active navSpacing">
+                <a class="nav-link" [routerLink]="['/activities']" [queryParams]="{ category: 'hotel'}"><img
+                        src="./assets/bed.png" width="15px"><br>Alle Hotels
+                        <span class="sr-only">(current)</span>
+                </a>
+            </li>
+
+            <li class="nav-item active navSpacing">
+                <a class="nav-link" [routerLink]="['/activities']" [queryParams]="{ category: 'museum'}"><img
+                    src="./assets/bank.png" width="15px"><br>Alle Museen
+                    <span class="sr-only">(current)</span>
+                    </a>
+            </li>
+
+            <li class="nav-item active navSpacing">
+                <a class="nav-link" [routerLink]="['/activities']" [queryParams]="{ category: 'other'}"><img
+                    src="./assets/more.png" width="15px"><br>Alle Sonstigen
+                    <span class="sr-only">(current)</span>
+                </a>
+            </li>
+
+            <li class="nav-item active navSpacing">
+                <a class="nav-link" [routerLink]="['/admin']" >
+                    <img src="./assets/more.png" width="15px"><br>Admin
+                    <span class="sr-only">(current)</span>
+                </a>
+            </li>     
+        </ul>
+
+        <app-search-bar></app-search-bar>
+
+    </div>
+</nav>

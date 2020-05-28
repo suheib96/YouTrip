@@ -1,0 +1,18 @@
+<div class="input-group mb-3 margin">
+
+    <input type="text" class="form-control" placeholder="Stadt auswählen..." 
+    aria-label="Stadt eingaben" aria-describedby="button-citySearch" (focusin)="wantedCity"
+    (keyup)="findCity()" [(ngModel)]="wantedCity">
+
+    <div class="input-group-append">
+      <button class="btn btn-outline-primary" type="button" [routerLink]="['/activities']" [queryParams]="{city: wantedCityId}">Suchen</button>
+    </div>
+  </div>
+
+<div >
+    <ul class="list-group hover-on-top">
+        <li class="list-group-item list-group-item-action" *ngFor="let city of citiesSearchResult" >
+            <a (click)="fillAndFind(city)"> {{city.name}}</a>
+        </li>
+    </ul>
+</div>

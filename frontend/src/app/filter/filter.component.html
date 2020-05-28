@@ -1,0 +1,42 @@
+<h1>Filter</h1>
+
+<h2>Zeige mir alle Aktivitäten in einer Stadt mit einem bestimmten Rating</h2>
+
+<form [formGroup]="formCityAndScore" (ngSubmit)="findByCityAndScore()">
+
+    <select class="margin" formControlName="cityId">
+        <option value="">Alle Städte</option>
+        <option *ngFor="let city of cities" [ngValue]="city.id">{{city.name}}</option>
+    </select>
+
+    <select class="margin" formControlName="score">
+        <option value="">Alle Sterne</option>
+        <option [ngValue]="1">1 Stern</option>
+        <option [ngValue]="2">2 Sterne</option>
+        <option [ngValue]="3">3 Sterne</option>
+        <option [ngValue]="4">4 Sterne</option>
+        <option [ngValue]="5">5 Sterne</option>
+    </select><br>
+
+    <button type="submit">Suchen</button>
+</form>
+
+<h2 class="margin-top"> Zeige mir alle Aktivitäten in einer Stadt mit einer bestimmten Kategorie</h2>
+
+<form [formGroup]="formCityAndCategory" (ngSubmit)="findByCityAndCategory()">
+
+    <select class="margin" formControlName="cityId">
+        <option value="">Alle Städte</option>
+        <option *ngFor="let city of cities" [ngValue]="city.id">{{city.name}}</option>
+    </select>
+
+    <select class="margin" formControlName="category">
+        <option value="">Alle Kategorien</option>
+        <option value="RESTAURANT">Restaurant</option>
+        <option value="HOTEL">Hotel</option>
+        <option value="MUSEUM">Museum</option>
+        <option value="OTHER">Sonstige</option>
+    </select><br>
+
+    <button type="submit">Suchen</button>
+</form>

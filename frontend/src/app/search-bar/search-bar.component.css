@@ -1,0 +1,12 @@
+.hover-on-top {
+    z-index: 200;
+    position: absolute;
+}
+
+.sizeInput {
+    width: 400px;
+}
+
+.margin {
+    margin-top: 30px;
+}

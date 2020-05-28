@@ -1,0 +1,50 @@
+<app-navBar></app-navBar>
+
+<div class="row justify-content-center">
+
+    <div class="col-3">
+    </div>
+
+    <div class="col-9">
+        <h1>Alle Städte:</h1>
+
+        <table>
+            <tr *ngFor="let city of cities;">
+                <td>
+                    <p> Name: {{city?.name}}</p>
+                    <p class="margin-left">ID: {{city?.id}}</p>
+                </td>
+                <td>
+                    <button (click)="city.edit = !city.edit">Bearbeiten</button>
+                    <button (click)="handleDeleteCity(city.id)">Löschen</button>
+                    <div *ngIf="city.edit">
+                        <form [formGroup]="form" (ngSubmit)="editCity(city.id)">
+
+                            <input formControlName="name" type="text" placeholder="Name" />
+                            <div
+                                *ngIf="form.controls.name.invalid && (form.controls.name.touched || form.controls.name.dirty)">
+                                Bitte Feld ausfüllen</div>
+
+                            <button type="submit">Speichern</button>
+
+                        </form>
+                    </div>
+                </td>
+            </tr>
+        </table>
+
+        <h2>Stadt hinzufügen</h2>
+        <div>
+            <form [formGroup]="form" (ngSubmit)="createNewCity()">
+
+                <input formControlName="name" type="text" placeholder="Name" />
+
+                <div *ngIf="form.controls.name.invalid && (form.controls.name.touched || form.controls.name.dirty)">
+                    Bitte Feld ausfüllen
+                </div>
+
+                <button type="submit">Speichern</button>
+            </form>
+        </div>
+    </div>
+</div>

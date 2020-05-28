@@ -1,0 +1,14 @@
+<app-navBar></app-navBar>
+
+<div class="row justify-content-center">
+
+    <div class="col-3 boarder">
+        <app-filter [inputCityId]="cityId" [inputCategory]="category" (activitiesOut)="handleReceiveActivities($event)">
+        </app-filter>
+    </div>
+
+    <div class="col-9 boarder-top boarder-bot">
+        <app-activity-list [inputActivities]='activities'></app-activity-list>
+    </div>
+    
+</div>  
